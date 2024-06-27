@@ -60,5 +60,5 @@ jobs:
         # An optional tag for the release. If this is omitted the git ref will be used (if it is a tag).
         tag: release
         # The Github token.
-        token: ${{ github.token }}
+        token: ${{ secrets.GITHUB_TOKEN }}
               
