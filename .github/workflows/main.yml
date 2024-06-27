@@ -1,4 +1,4 @@
-name: Nürburgring
+name: Run Python-Script
 
 on:
   push:
@@ -11,15 +11,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - name: Check out repository
+      uses: actions/checkout@v4
       with:
-        python-version: 3.9
+        sparse-checkout: .
+    
+    - name: Set up python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' 
+
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        
     - name: Run Python script
       run: |
         python main.py
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ics artifacts
+        path: |
+          *.ics
+        if-no-files-found: error
+        retention-days: 7
+        compression-level: 6
+        overwrite: true
+        
