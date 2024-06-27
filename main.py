@@ -261,7 +261,7 @@ for loc in location_names:
   ics = convertLFtoCRLF(ics)
   # TODO: can't be bothered rn
   #ics = foldLongLines(ics)
-  print(ics)
+  #print(ics)
 
   # Export the calendar to an .ics file
   with open(save_name+'.ics', 'w') as f:
