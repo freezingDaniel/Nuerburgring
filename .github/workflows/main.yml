@@ -54,10 +54,10 @@ jobs:
         body: body854
         # Optionally marks this release as a draft release. Set to true to enable.
         draft: true
-        # An optional name for the release. If this is omitted the tag will be used.
-        name: release
         # Optionally marks this release as prerelease. Set to true to enable.
         prerelease: true
+        # An optional tag for the release. If this is omitted the git ref will be used (if it is a tag).
+        tag: release
         # The Github token.
         token: ${{ github.token }} # optional, default is ${{ github.token }}
               
