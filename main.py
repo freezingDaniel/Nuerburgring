@@ -47,7 +47,7 @@ else:
 
 location_names={
     '12':{'name':'Tourist Drives Nordschleife',
-          'addr':'Nürburgring Tourist Drives\, 53520 Nürburg\, Germany',
+          'addr':'Nürburgring Tourist Drives\\, 53520 Nürburg\\, Germany',
           'desc':'https://nuerburgring.de/driving/touristdrives'},
     '11':{'name':'Tourist Drives Grand Prix Track',
           'addr':'',
@@ -77,14 +77,14 @@ location_names={
 
 location_names={
     '12':{'name':'Tourist Drives Nordschleife',
-          'addr':'Nürburgring Tourist Drives\, 53520 Nürburg\, Germany',
+          'addr':'Nürburgring Tourist Drives\\, 53520 Nürburg\\, Germany',
           'desc':'https://nuerburgring.de/driving/touristdrives'
                 + '\n \\n'
                 + '\n \\nNordschleife emergency number: 0800 0302 112'
                 + '\n \\n'
                 + '\n \\nPlease note:'
                 + '\n \\nThe track can be closed at any time for unforeseeable'
-                + '\n reasons (e.g. due to an accident or bad weather conditions).'
+                + '\n  reasons (e.g. due to an accident or bad weather conditions).'
                 + '\n \\nThis may result in a postponement'
                 + '\n of the opening hours or in waiting times.'},
 
@@ -96,7 +96,7 @@ location_names={
                 + '\n \\n'
                 + '\n \\nPlease note:'
                 + '\n \\nThe track can be closed at any time for unforeseeable'
-                + '\n reasons (e.g. due to an accident or bad weather conditions).'
+                + '\n  reasons (e.g. due to an accident or bad weather conditions).'
                 + '\n \\nThis may result in a postponement'
                 + '\n of the opening hours or in waiting times.'},
 }
@@ -134,7 +134,6 @@ event_template="""BEGIN:VEVENT
 UID:fd-{trackid}-{startdate}
 DTSTAMP:{todaydate}T{todaytime}Z
 LAST-MODIFIED:{todaydate}T{todaytime}Z
-SEQUENCE:2
 DTSTART;TZID=Europe/Berlin:{startdate}T{starttime}
 DTEND;TZID=Europe/Berlin:{enddate}T{endtime}
 SUMMARY:{summary}
@@ -146,7 +145,7 @@ END:VEVENT
 
 calendar_end="END:VCALENDAR"
 
-print("Example ics:")
+# Example ics
 data={'trackid':"12",
       'startdate':'yyyymmdd',
       'starttime':'hhmmss',
@@ -154,12 +153,12 @@ data={'trackid':"12",
       'endtime':'hhmmss',
       'summary':'Touristenfahrten Nordschleife',
       'description':'No description provided',
-      'address':'Hauptstraße 1\, 53520 Nürburg\, Germany',
+      'address':'Hauptstraße 1\\, 53520 Nürburg\\, Germany',
       'todaydate':'yyyymmdd',
       'todaytime':'hhmmss',
       }
 ics=calendar_start+berlin_tz+'\n'+event_template.format(**data)+'\n'+calendar_end
-print(ics)
+# print("Example ics:\n", ics)
 
 """### Eventlist generation"""
 
@@ -170,13 +169,14 @@ def generate_events(track_id = "12"):
 
   for key_date in schedule_dict.get(track_id):
     value_json = schedule_dict.get(track_id).get(key_date)
-    print(value_json)
+    # print("Event-day-JSON:", value_json)
 
     now = datetime.now()
 
     # If Track is closed
     if(value_json.get('opened') is False):
-      print(key_date,":",value_json.get('status'))
+      # print("Track Status c:", key_date,":",value_json.get('status'))
+      pass
 
     # If Track is open
     elif (value_json.get('exclusion').get('opened') is True):
@@ -201,13 +201,13 @@ def generate_events(track_id = "12"):
             'endtime':close.replace(":", "")+"00",
             'summary':message,
             'description':summary,
-            'address':'Hauptstraße 1\, 53520 Nürburg\, Germany',
+            'address':'Hauptstraße 1\\, 53520 Nürburg\\, Germany',
             'todaydate':now.strftime('%Y%m%d'),
             'todaytime':now.strftime('%H%M%S'),
             }
       return_value += event_template.format(**data)
 
-      print(key_date, ":", "Open:", open, "Closed:", close, message)
+      print("Track Status o:", key_date, ":", "Open:", open, "Closed:", close, message)
 
     # Else more programming required if this happens
     else:
@@ -255,7 +255,7 @@ for loc in location_names:
   ics = calendar_start
   ics += berlin_tz
   ics += generate_events(loc)
-  ics +=calendar_end
+  ics += calendar_end
 
   # https://icalendar.org/iCalendar-RFC-5545/3-1-content-lines.html
   ics = convertLFtoCRLF(ics)
