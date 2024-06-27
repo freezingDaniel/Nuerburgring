@@ -52,6 +52,8 @@ jobs:
           *.ics
         # An optional body for the release.
         body: body854
+        # An optional commit reference. This will be used to create the tag if it does not exist.
+        commit: main
         # Optionally marks this release as a draft release. Set to true to enable.
         draft: true
         # Optionally marks this release as prerelease. Set to true to enable.
