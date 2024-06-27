@@ -41,3 +41,23 @@ jobs:
         compression-level: 6
         overwrite: true
         
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      with:
+        # An optional flag which indicates if we should update a release if it already exists. Defaults to false.
+        allowUpdates: true
+        # An optional flag which indicates if artifact read or upload errors should fail the build.
+        artifactErrorsFailBuild: true
+        artifacts: |
+          *.ics
+        # An optional body for the release.
+        body: body854
+        # Optionally marks this release as a draft release. Set to true to enable.
+        draft: true
+        # An optional name for the release. If this is omitted the tag will be used.
+        name: release
+        # Optionally marks this release as prerelease. Set to true to enable.
+        prerelease: true
+        # The Github token.
+        token: ${{ github.token }} # optional, default is ${{ github.token }}
+              
