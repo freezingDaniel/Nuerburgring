@@ -54,9 +54,9 @@ jobs:
           *.ics
         # An optional body for the release.
         body: Add the ics to you calendar using 
-          https://github.com/freezingDaniel/Nuerburgring/releases/download/release/Tourist-Drives-Nordschleife.ics 
+          https://github.com/freezingDaniel/Nuerburgring/releases/download/latest/Tourist-Drives-Nordschleife.ics 
           and 
-          https://github.com/freezingDaniel/Nuerburgring/releases/download/release/Tourist-Drives-Grand-Prix-Track.ics 
+          https://github.com/freezingDaniel/Nuerburgring/releases/download/latest/Tourist-Drives-Grand-Prix-Track.ics 
           respectiveley
         # An optional commit reference. This will be used to create the tag if it does not exist.
         commit: main
@@ -67,5 +67,5 @@ jobs:
         # Indicates if existing release artifacts should be removed.
         removeArtifacts: true
         # An optional tag for the release. If this is omitted the git ref will be used (if it is a tag).
-        tag: release
+        tag: latest
               
