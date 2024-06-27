@@ -48,8 +48,7 @@ jobs:
         allowUpdates: true
         # An optional flag which indicates if artifact read or upload errors should fail the build.
         artifactErrorsFailBuild: true
-        artifacts: |
-          *.ics
+        artifacts: Tourist-Drives-Nordschleife.ics
         # An optional body for the release.
         body: body854
         # An optional commit reference. This will be used to create the tag if it does not exist.
@@ -61,5 +60,5 @@ jobs:
         # An optional tag for the release. If this is omitted the git ref will be used (if it is a tag).
         tag: release
         # The Github token.
-        token: ${{ github.token }} # optional, default is ${{ github.token }}
+        token: ${{ github.token }}
               
