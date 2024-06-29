@@ -62,6 +62,7 @@ jobs:
         commit: main
         # Optionally marks this release as a draft release. Set to true to enable.
         draft: false
+        makeLatest: true
         # Optionally marks this release as prerelease. Set to true to enable.
         prerelease: false
         # Indicates if existing release artifacts should be removed.
