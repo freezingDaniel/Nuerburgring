@@ -58,8 +58,7 @@ jobs:
         artifacts: |
           *.ics
         # An optional body for the release.
-        body: Updated on ${{ env.NOW }} . 
-          Add the ics to you calendar using 
+        body: Subscribe to the ics in your calendar using 
           https://github.com/freezingDaniel/Nuerburgring/releases/download/latest/Tourist-Drives-Nordschleife.ics 
           and 
           https://github.com/freezingDaniel/Nuerburgring/releases/download/latest/Tourist-Drives-Grand-Prix-Track.ics 
