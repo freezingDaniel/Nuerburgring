@@ -16,7 +16,7 @@ jobs:
     - name: Get current date
       id: date
       run: |
-        echo "{date}={$(date +'%Y-%m-%dT%H:%M:%S')}" >> $GITHUB_STATE
+        echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
         
     - name: Check out repository
       uses: actions/checkout@v4
@@ -58,7 +58,7 @@ jobs:
         artifacts: |
           *.ics
         # An optional body for the release.
-        body: Updated on ${{ env.date }}. 
+        body: Updated on $NOW. 
           Add the ics to you calendar using 
           https://github.com/freezingDaniel/Nuerburgring/releases/download/latest/Tourist-Drives-Nordschleife.ics 
           and 
