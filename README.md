@@ -1,4 +1,4 @@
-[![Run Python-Script](https://github.com/freezingDaniel/Nuerburgring/actions/workflows/main.yml/badge.svg)](https://github.com/freezingDaniel/Nuerburgring/actions/workflows/main.yml)
+[![Run Python-Script](https://github.com/freezingDaniel/Nuerburgring/actions/workflows/update-release.yml/badge.svg)](https://github.com/freezingDaniel/Nuerburgring/actions/workflows/update-release.yml)
 
 # Nuerburgring
 ICS Calendar
