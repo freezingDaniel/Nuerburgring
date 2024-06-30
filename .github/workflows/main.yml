@@ -58,7 +58,7 @@ jobs:
         artifacts: |
           *.ics
         # An optional body for the release.
-        body: Updated on $NOW. 
+        body: Updated on ${{ env.NOW }} . 
           Add the ics to you calendar using 
           https://github.com/freezingDaniel/Nuerburgring/releases/download/latest/Tourist-Drives-Nordschleife.ics 
           and 
