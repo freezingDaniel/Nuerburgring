@@ -109,6 +109,7 @@ calendar_start="""BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
 PRODID:github.com/freezingDaniel/nuerburgring-calendar
+X-PUBLISHED-TTL:PT4H
 """
 
 berlin_tz="""BEGIN:VTIMEZONE
