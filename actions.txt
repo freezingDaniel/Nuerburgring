@@ -1,0 +1,5 @@
+Scheduled workflows are disabled automatically after 60 days of repository inactivity.
+
+To be able to easily and quickly restart them I've created this file
+
+2024-12-31
