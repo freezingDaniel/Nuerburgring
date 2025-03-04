@@ -1,7 +1,7 @@
 [![Run Python-Script](https://github.com/freezingDaniel/Nuerburgring/actions/workflows/update-release.yml/badge.svg)](https://github.com/freezingDaniel/Nuerburgring/actions/workflows/update-release.yml)
 
 # Nuerburgring Calendar
-Here you find an ICS-file with the calendar of the 'Ring
+Here you find an ICS-calendar with the open hours of the 'Ring (Nordschleife and GP-Track separate)
 
 ## How often is it updated:
 The Program pulls/reads the schedule from https://nuerburgring.de/open-hours every 4 hours, so it's not guaranteed to always be fully up-to-date on shortterm changes.
